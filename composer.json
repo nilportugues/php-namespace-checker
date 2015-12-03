@@ -1,0 +1,34 @@
+{
+    "name": "nilportugues/php_namespace_checker",
+    "description": "Check for invalid namespaces",
+    "type": "library",
+    "homepage": "http://nilportugues.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nil Portugués Calderó",
+            "email": "contact@nilportugues.com",
+            "role": "Project Lead Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.4.*",
+        "fabpot/php-cs-fixer": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "NilPortugues\\NamespaceChecker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NilPortugues\\Tests\\NamespaceChecker\\": "tests/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
