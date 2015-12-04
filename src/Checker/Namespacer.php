@@ -40,6 +40,8 @@ class Namespacer
 
         foreach($autoloaders as $psr => $filesUnderPsr) {
             foreach($filesUnderPsr as $namespace => $path) {
+                $namespace = str_replace('\\\\', '\\', $namespace);
+
                 $files = $this->fileReader->getFilesFromPath($path);
 
                 if ($psr === Reader::PSR0) {
@@ -69,6 +71,16 @@ class Namespacer
                 $fileClassName = pathinfo($file, PATHINFO_FILENAME);
 
                 $phpClassNamespace = $generator->getClass()->getNamespaceName();
+                if (false === strpos($namespace, $phpClassName)) {
+                    throw new \Exception(
+                        sprintf(
+                            "File '%s' namespace is not valid.\nExpected to be under the '%s' namespace, found '%s'.",
+                            $file,
+                            $namespace,
+                            $phpClassNamespace
+                        )
+                    );
+                }
         }
 
         print_r(func_get_args()); die();
