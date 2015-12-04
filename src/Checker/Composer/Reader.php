@@ -17,7 +17,7 @@ class Reader
      *
      * @return array
      */
-    public static function readAutoloader($composerFile)
+    public static function getAutoloadPaths($composerFile)
     {
         $composerFile = self::jsonDecode($composerFile);
 

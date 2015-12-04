@@ -25,7 +25,7 @@ before submitting your Pull Request.
 One may ask you to [squash your
 commits](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html)
 too. This is used to "clean" your Pull Request before merging it (we don't want
-commits such as `fix tests`, `fix 2`, `fix 3`, etc.).
+commits such as `dryRun tests`, `dryRun 2`, `dryRun 3`, etc.).
 
 Also, while creating your Pull Request on GitHub, you MUST write a description
 which gives the context and/or explains why you are creating it.

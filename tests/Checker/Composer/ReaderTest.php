@@ -44,7 +44,7 @@ JSON;
     public function testItReadsPsr0()
     {
         $composer = $this->getComposerFile();
-        $namespaces = Reader::readAutoloader($composer);
+        $namespaces = Reader::getAutoloadPaths($composer);
         $this->assertNotEmpty($namespaces[Reader::PSR0]);
     }
 
@@ -54,7 +54,7 @@ JSON;
     public function testItReadsPsr4()
     {
         $composer = $this->getComposerFile();
-        $namespaces = Reader::readAutoloader($composer);
+        $namespaces = Reader::getAutoloadPaths($composer);
         $this->assertNotEmpty($namespaces[Reader::PSR4]);
     }
 }
