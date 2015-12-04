@@ -9,14 +9,22 @@ class Reader
 {
     const PSR0 = 'psr-0';
     const PSR4 = 'psr-4';
-
     const AUTOLOAD = 'autoload';
-
     const AUTOLOAD_DEV = 'autoload-dev';
 
+    /**
+     * @param string $composerFile
+     *
+     * @return array
+     */
     public static function readAutoloader($composerFile)
     {
         $composerFile = self::jsonDecode($composerFile);
+
+        $autoload = [
+            self::PSR0 => [],
+            self::PSR4 => [],
+        ];
 
         $autoloadProd = self::getAutoloadValues($composerFile, self::AUTOLOAD);
         $autoloadDev = self::getAutoloadValues($composerFile, self::AUTOLOAD_DEV);
@@ -31,8 +39,7 @@ class Reader
             (!empty($autoloadDev[self::PSR4])) ? $autoloadDev[self::PSR4] : []
         );
 
-        print_r($autoload);
-        die();
+        return $autoload;
     }
 
     /**

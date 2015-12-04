@@ -12,7 +12,9 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "symfony/console": "~2",
+        "zendframework/zend-code": "~2"
     },
     "require-dev": {
         "phpunit/phpunit": "4.4.*",
@@ -28,7 +30,7 @@
             "NilPortugues\\Tests\\NamespaceChecker\\": "tests/"
         }
     },
-    "config": {
-        "bin-dir": "bin/"
-    }
+    "bin": [
+        "bin/php-namespace-checker"
+    ]
 }
